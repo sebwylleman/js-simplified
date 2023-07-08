@@ -9,8 +9,8 @@ const person = {
 }
 
 function printNames(currentPerson) {
+  if (currentPerson == null) return
   console.log(currentPerson.name)
-  if (currentPerson.friend == null) return
   printNames(currentPerson.friend)
 }
 
