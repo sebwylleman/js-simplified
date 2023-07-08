@@ -1,4 +1,17 @@
-for (let i = 0; i < 11; i++) {
-  if (i === 4) break
-  console.log(i)
+const person = {
+  name: "Kyle",
+  friend: {
+    name: "Joe",
+    friend: {
+      name: "Sally",
+    },
+  },
 }
+
+function printNames(currentPerson) {
+  console.log(currentPerson.name)
+  if (currentPerson.friend == null) return
+  printNames(currentPerson.friend)
+}
+
+printNames(person)
