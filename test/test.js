@@ -1,17 +1,8 @@
-const person = {
-  name: "Kyle",
-  friend: {
-    name: "Joe",
-    friend: {
-      name: "Sally",
-    },
-  },
+function printVariable(variable) {
+  console.log(variable)
+}
+function greet(name, callback) {
+  callback(`Hello ${name}`)
 }
 
-function printNames(currentPerson) {
-  if (currentPerson == null) return
-  console.log(currentPerson.name)
-  printNames(currentPerson.friend)
-}
-
-printNames(person)
+greet("Seb", printVariable)
