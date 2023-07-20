@@ -1,5 +1,2 @@
-let printName = (name) => {
-  console.log(name)
-}
-
-printName("Seb")
+let printHi = (name) => console.log(`Hi ${name}`)
+printHi("Seb")
