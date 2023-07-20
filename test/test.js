@@ -1,11 +1,5 @@
-// function printVariable(variable) {
-//   console.log(variable)
-//}
-function greet(name, callback) {
-  callback(`Hello ${name}`)
+let printName = (name) => {
+  console.log(name)
 }
 
-greet("Seb", function (variable) {
-  // using anonymous function declaration
-  console.log(variable)
-})
+printName("Seb")
