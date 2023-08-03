@@ -5,10 +5,10 @@
     * BONUS: The questions (have the class `question-item`)
     * BONUS: The alert (has the id `alert`)
 */
-const form = document.getElementById("quiz-form")
+const form = document.querySelector("#quiz-form")
 const answers = Array.from(document.querySelectorAll(".answer"))
 const questions = document.querySelectorAll(".question-item")
-const alert = document.getElementById("alert")
+const alert = document.querySelector("#alert")
 
 // TODO: 3. Create a submit event listener for the form that does the following.
 //    1. Prevent the default behaviour
