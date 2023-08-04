@@ -1,15 +1,42 @@
 // TODO: Select all elements needed
 //    Use the HTML to figure out what classes/ids will work best for selecting each element
 
-// TODO: Create an event listener for when the form is submitted and do the following inside of it.
-//    TODO: Create an array to store all error messages and clear any old error messages
-//    TODO: Define the following validation checks with appropriate error messages
-//      1. Ensure the username is at least 6 characters long
-//      2. Ensure the password is at least 10 characters long
-//      3. Ensure the password and confirmation password match
-//      4. Ensure the terms checkbox is checked
-//    TODO: If there are any errors then prevent the form from submitting and show the error messages
+const form = document.querySelector("#form")
+const usernameInput = document.querySelector("#username")
+const passwordInput = document.querySelector("#password")
+const passwordConfInput = document.querySelector("#password-confirmation")
+const termsInput = document.querySelector("#terms")
 
+// TODO: Create an event listener for when the form is submitted and do the following inside of it.
+form.addEventListener("submit", (e) => {
+  e.preventDefault()
+
+  //    TODO: Create an array to store all error messages and clear any old error messages
+  const errorMessages = []
+  clearErrors()
+  //    TODO: Define the following validation checks with appropriate error messages
+  //      1. Ensure the username is at least 6 characters long
+  // 2. Ensure the password is at least 10 characters long
+  // //      3. Ensure the password and confirmation password match
+  // //      4. Ensure the terms checkbox is checked
+  const correctUsername = usernameInput.value.length >= 6
+  const correctPassword = passwordInput.value.length >= 10
+  const matchingPassowrds =
+    passwordInput.value.length === passwordConfInput.value.length
+  if (!correctUsername) {
+    errorMessages.push("Username must be at least 6 characters long.")
+  }
+  if (!correctPassword) {
+    errorMessages.push("Password must be at least 10 characters long.")
+  }
+
+  if (!matchingPassowrds) {
+    errorMessages.push("Password don't match. Try again")
+  }
+  console.log(errorMessages)
+  //
+  //    TODO: If there are any errors then prevent the form from submitting and show the error messages
+})
 // TODO: Define this function
 function clearErrors() {
   // Loop through all the children of the error-list element and remove them
